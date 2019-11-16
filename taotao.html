@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Happy Birthday</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+	<link rel="shortcut icon" href="xin.ico">
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">班花，下面是你涛哥我的超多祝福：</span><br />
+				<span class="space"/><span class="comments">
+					&nbsp 班花，炒鸡开心陪着你又成长了一岁，和你相伴的这么多日子里，有欢乐，有伤悲，即使争吵，在我们深厚友谊面前也只是浮云罢了，你喜欢给我讲道理，给我讲的那些话我也一一记着的。从高一相伴的日子再到大学相互"扶持"的日子，你教会了我许多，我也收获到许多，能成为这样的自己，也多亏了你的良苦用心。不管我是不是你的涛哥，我都想从心底里对你说一万句（一万句可能也还不够）感谢，不过你也懂我，因为我什么话都会对你讲。我信赖的伙伴啊，如果你向我挥手，我便会向你伸手，人生的路上有你相伴，是我的幸运。有时候，那些煽情的话，才是最好的表达方式，在对我讲知心话的时候，我感受到你的善良，我也愿兄弟一生一起走陪你走到最后;在对外的时候，我感受到你的霸气，让我对你更是尊敬。我这个人，只会骚皮，也造孽你咯，嘿嘿嘿，忍受了我这么久。不过，话也说不完，如果此时此刻我在你身边，真是想给你一个大大的拥抱，不知你是否肯接受。
+					
+				</span><br />
+				<span class="space"/><span class="comments">
+					&nbsp 最后，借用《阿甘正传》里面的一句话，life is like a box of chocolates,you will never know what you will get if you don't taste them.美好的未来在等着我们，加油吧！一起奋斗，向美好的未来奋斗（说到这里，又想起了，和你通常，无谓问我一生的事.....《奔向未来日子》,还有我们讨论过的bobby,b.i，winner..........）还有那么多的故事，那就让我们奔向未来日子吧!!!!
+					祝你生日快乐，天天都要开心哟!!
+				</span><br />
+				<span class="space"/>&nbsp	<a href="./index.html">返回</a><br/>
+				<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						宋嘉欣,生日快乐！<br/>
+						<br/>
+						
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Auld Lang Syne<br/>
+						<div class="signature">中南海纪检监察会</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2018, 5, 31);
+		together.setHours(12);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+	<footer>
+			<p align="right">Copyright © 2018 - 中南海纪检监察会</p>
+	</footer>
+</body>
+</html>
